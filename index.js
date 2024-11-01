@@ -1,12 +1,12 @@
-import eslintConfigStandard from 'eslint-config-standard'
-import standardts from 'eslint-config-standard-with-typescript'
+import standardJs from 'eslint-config-standard'
+import standardTs from 'eslint-config-standard-with-typescript'
 import globals from 'globals'
 import importPlugin from 'eslint-plugin-import'
 import n from 'eslint-plugin-n'
 import promise from 'eslint-plugin-promise'
 import tslint from '@typescript-eslint/eslint-plugin'
 import tsparser from '@typescript-eslint/parser'
-delete standardts.extends
+delete standardTs.extends
 
 function toLanguageOptions (conf) {
   conf.languageOptions = {
@@ -21,18 +21,35 @@ function toLanguageOptions (conf) {
   delete conf.parserOptions
 }
 
-toLanguageOptions(eslintConfigStandard)
-toLanguageOptions(standardts)
+toLanguageOptions(standardJs)
+toLanguageOptions(standardTs)
 
-standardts.languageOptions.parser = tsparser
+standardTs.languageOptions.parser = tsparser
 
-standardts.files = [ '**/*.{ts,tsx}' ]
+standardTs.files = [ '**/*.{ts,tsx}' ]
 
-eslintConfigStandard.files = [ '**/*.{js,jsx,mjs,cjs}' ]
+standardJs.files = [ '**/*.{js,jsx,mjs,cjs}' ]
+
+export const extraConfig = {
+  plugins: {
+    import: importPlugin,
+    n,
+    promise,
+    '@typescript-eslint': tslint
+  },
+  languageOptions: {
+    globals: {
+      ...globals.es2021,
+      ...globals.node,
+    }
+  }
+}
+
+export {standardTs, standardJs} 
 
 export default [
-  eslintConfigStandard,
-  standardts,
+  standardJs,
+  standardTs,
   {
     plugins: {
       import: importPlugin,
