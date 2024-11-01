@@ -1,0 +1,57 @@
+{
+  "name": "ts-standard-eslint-flat-config",
+  "version": "1.0.0",
+  "private": false,
+  "homepage": "https://github.com/snowbldr/ts-standard-eslint-flat-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snowbldr/ts-standard-eslint-flat-config.git"
+  },
+  "keywords": [
+    "TypeScript Standard Style",
+    "check",
+    "checker",
+    "code",
+    "code checker",
+    "code linter",
+    "code standards",
+    "code style",
+    "enforce",
+    "eslint",
+    "lint",
+    "policy",
+    "quality",
+    "simple",
+    "standard",
+    "standard style",
+    "style",
+    "style checker",
+    "style linter",
+    "verify",
+    "typescript",
+    "standardjs",
+    "tslint",
+    "flat config"
+  ],
+  "description": "An eslint flat config based on ts-standard",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "snowbldr",
+  "license": "MIT",
+  "dependencies": {
+    "globals": "^15.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.57.0"
+  }
+}
