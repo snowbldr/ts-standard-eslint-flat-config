@@ -26,13 +26,11 @@ toLanguageOptions(standardts)
 
 standardts.languageOptions.parser = tsparser
 
+standardts.files = [ '**/*.{ts,tsx}' ]
+
+eslintConfigStandard.files = [ '**/*.{js,jsx,mjs,cjs}' ]
+
 export default [
-  {
-    files: [
-      '**/*.ts',
-      '**/*.tsx',
-    ],
-  },
   eslintConfigStandard,
   standardts,
   {
