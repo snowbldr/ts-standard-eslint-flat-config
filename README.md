@@ -39,7 +39,7 @@ import {standardJs, standardTs, extraConfig} from 'ts-standard-eslint-flat-confi
 import react from 'eslint-plugin-react'
 import globals from 'globals'
 
-const reactConfig = reactPlugin.config.flat.recommended
+const reactConfig = react.configs.flat.recommended
 
 delete reactConfig.rules['react/prop-types']
 
@@ -50,7 +50,7 @@ export default [
   {
     languageOptions: {
       globals: {
-        ...globals.brower,
+        ...globals.browser,
         ...globals.jest
       }
     }
