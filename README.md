@@ -44,7 +44,9 @@ const reactConfig = react.configs.flat.recommended
 delete reactConfig.rules['react/prop-types']
 
 export default [
-  {...standardJs, ...react.configs.flat['jsx-runtime'], ...reactConfig},
+  standardJs,
+  react.configs.flat['jsx-runtime'],
+  react.configs.flat.recommended,
   standardTs,
   extraConfig,
   {
